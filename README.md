@@ -1,38 +1,63 @@
-# Identity Governance and Administration (IGA) Audit Automation with Python
+# IAM & Cybersecurity Engineering Portfolio 🛡️
 
-This project simulates a lightweight IGA (Identity Governance and Administration) tool using Python and the Pandas library. The primary goal is to automate the access review process and ensure security compliance by reconciling raw cloud infrastructure data with the official HR employee database.
+This repository centralizes a collection of automated tools, scripts, and architectures designed for **Identity and Access Management (IAM)**, **Identity Governance and Administration (IGA)**, **SecOps**, and **Privilege Management**.
 
-## 🛡️ Automated Security Features
+The primary goal of this portfolio is to demonstrate the practical, scalable application of modern security pillars: Governance, Incident Response, Least Privilege, and Compliance Automation.
 
-* **Ghost Accounts Detection:** Automatically identifies active cloud accounts belonging to employees who have already been terminated in the HR system (mitigating critical unauthorized access risks).
-* **Access Review (Stale Keys):** Filters and flags access keys or credentials that haven't been rotated in over 90 days, violating standard corporate security compliance.
-* **Segregation of Duties (SoD) Analysis:** Detects users with conflicting high-privilege roles (e.g., holding both `Admin` and `Auditor` permissions simultaneously) to mitigate internal fraud risks.
+---
 
-## 📊 Tech Stack & Tools
+## 📁 Repository Structure (10-Project Roadmap)
 
-* **Python 3**
-* **Pandas Library:** Used for advanced data manipulation, filtering, and table merging (`pd.merge`).
-* **Structured Data:** Handles `JSON` (Cloud data), `CSV` (HR data), and automatically exports audit evidence to `Excel (.xlsx)`.
+### 📊 Phase 1: Governance, Logs & Base Automation
+#### 1. `01_identity_governance` (IGA Audit Automation)
+* **The Idea:** Automate access reviews by reconciling HR databases with cloud infrastructure data.
+* **Features:** Detection of active accounts belonging to terminated employees (*Ghost Accounts*), unrotated access keys (*Stale Keys*), and conflicting high-privilege roles (*Segregation of Duties - SoD*).
+* **Stack:** Python, Pandas, JSON, CSV.
 
-## 🚀 How to Run
+#### 2. `02_auth_monitor` (Security Log Analysis & Brute Force Detection)
+* **The Idea:** A lightweight SIEM-like log parser built for active monitoring and immediate threat containment.
+* **Features:** Threshold-based brute force attack detection (`LOGIN_FAILED`) and automated IP extraction for firewall blocking rules.
+* **Stack:** Native Python (File I/O, Exception Handling).
 
-1. Clone this repository:
-   ```bash
-   git clone [https://github.com/IvanMaiaAlves/identity-governance-automation.git] 
+#### 3. `03_rbac_matrix_simulator` (Role-Based Access Control Engine)
+* **The Idea:** A provisioning engine built strictly around the Principle of Least Privilege.
+* **Features:** Map corporate roles via JSON matrices and mathematically assign exact permissions (AWS/Active Directory) based on job titles.
+* **Stack:** Python, JSON Structuring.
 
-Install the required dependencies:
+---
 
-Bash
+### 🛡️ Phase 2: Privilege Management & Non-Human Identities (Coming Soon)
+#### 4. `04_pam_just_in_time` (Privileged Access Management Simulator)
+* **The Idea:** Simulate a modern credential vault/PAM tool with Just-In-Time (JIT) elevation and automated revocation.
+* **Features:** Ephemeral credential generation with hardcoded Time-To-Live (TTL).
+
+#### 5. `05_machine_identity_auditor` (Secret & Certificate Management)
+* **The Idea:** Audit non-human identities, service accounts, API keys, and expiring certificates.
+* **Features:** Automated configuration scan to mitigate secrets exposure and credential leaks.
+
+#### 6. `06_abac_policy_validator` (Attribute-Based Access Control Policy Engine)
+* **The Idea:** Validate dynamic access contexts based on environmental variables (business hours, geolocation, device compliance).
+
+---
+
+### 🚀 Phase 3: Cloud IAM, APIs & Advanced Governance (Coming Soon)
+#### 7. `07_aws_iam_least_privilege_analyzer` (Cloud Security Assessment)
+* **The Idea:** Analyze cloud IAM policies (AWS/Azure) to flag over-privileged identities and dangerous wildcard permissions (e.g., `"*.*"`).
+
+#### 8. `08_oauth_api_gateway_monitor` (API Security)
+* **The Idea:** Validate and monitor OAuth2 tokens and permission scopes across corporate APIs.
+
+#### 9. `09_ciem_entitlement_reconciler` (Cloud Infrastructure Entitlement Management)
+* **The Idea:** Map cross-cloud permissions to identify privilege creep across multi-tenant cloud environments.
+
+#### 10. `10_iam_audit_dashboard` (Security Governance Metrics)
+* **The Idea:** Consolidate audit artifacts into data metrics, generating high-level risk and IAM compliance KPIs.
+
+---
+
+## 🚀 How to Run Active Projects
+
+### Prerequisites
+Install the required libraries:
+```bash
 pip install pandas openpyxl
-Run the audit script:
-
-Bash
-python auditoria.py
-📁 Generated Evidence & Reports
-Upon execution, the script generates a real-time terminal log (log_auditoria.txt) and outputs three specialized Excel spreadsheets for compliance teams:
-
-relatorio_contas_fantasma.xlsx (Action item: Immediate account deprovisioning)
-
-relatorio_chaves_obsoletas.xlsx (Action item: Enforce credential rotation)
-
-relatorio_violacao_sod.xlsx (Action item: Privilege reduction / Risk mitigation)
