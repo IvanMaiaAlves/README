@@ -10,11 +10,7 @@ I build tools that bridge the gap between abstract security policies and concret
 
 These projects are not just academic exercises; they replicate the core logic used by modern enterprise platforms (such as SailPoint, Saviynt, and SIEM tools) to safeguard cloud and on-premise environments:
 
-1. **Proactive Compliance (The Audit Pillar):** Continuously reconciling system states with authoritative HR data sources to prevent privilege creep and internal compliance failures.
-2. **Reactive Containment (The SecOps Pillar):** Instantly parsing raw system telemetry to spot ongoing threat signatures and taking immediate defensive countermeasures before a breach scales.
-3. **Preventative Engineering (The Provisioning Pillar):** Designing structured matrices where access permissions are hardcoded to job roles, ensuring every identity operates under the strict boundaries of Least Privilege from day one.
-
-4. # IAM & Cybersecurity Engineering Portfolio 🛡️
+# IAM & Cybersecurity Engineering Portfolio 🛡️
 
 This repository centralizes a collection of automated tools, scripts, and architectures designed for **Identity and Access Management (IAM)**, **Identity Governance and Administration (IGA)**, **SecOps**, and **Privilege Management**.
 
